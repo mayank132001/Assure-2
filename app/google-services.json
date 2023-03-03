@@ -1,0 +1,116 @@
+{
+  "project_info": {
+    "project_number": "844352257722",
+    "project_id": "assure-6be1d",
+    "storage_bucket": "assure-6be1d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844352257722:android:78cb79354cc67bc5318c83",
+        "android_client_info": {
+          "package_name": "com.app.assurestay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "844352257722-h3eu2a4tacgve98h83qpnmr4tn21hf0g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.assurestay",
+            "certificate_hash": "75c7f7889edbf2a045a2a50d542485839834eb03"
+          }
+        },
+        {
+          "client_id": "844352257722-k0e0oss2k8jhds61q5g43l881u9uo6ai.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.assurestay",
+            "certificate_hash": "e63757e168eb7f607858d84dfc2bd51a435b8da9"
+          }
+        },
+        {
+          "client_id": "844352257722-q9fvmmp3ji2o7hd22bnbundngp6pn7pv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.assurestay",
+            "certificate_hash": "344d251dda2047d389e0a8d5ceb62c7fffa29350"
+          }
+        },
+        {
+          "client_id": "844352257722-52cakdvm5r3c87h6m2ipkkoj2urmbuno.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK08l-f201zqJRCLSRfp1ceZUfrSfEk68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "844352257722-52cakdvm5r3c87h6m2ipkkoj2urmbuno.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844352257722:android:36d8dc027045cee7318c83",
+        "android_client_info": {
+          "package_name": "com.app.effistay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "844352257722-edg5o11uogtfclvmnvd1btg79ao6vnhh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.effistay",
+            "certificate_hash": "75c7f7889edbf2a045a2a50d542485839834eb03"
+          }
+        },
+        {
+          "client_id": "844352257722-fepkghgn639c7j7nhuctk1cb2lsciml1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.effistay",
+            "certificate_hash": "e63757e168eb7f607858d84dfc2bd51a435b8da9"
+          }
+        },
+        {
+          "client_id": "844352257722-k1d0rpatg2sd33mmb83ij1r9161qnqbo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.effistay",
+            "certificate_hash": "344d251dda2047d389e0a8d5ceb62c7fffa29350"
+          }
+        },
+        {
+          "client_id": "844352257722-52cakdvm5r3c87h6m2ipkkoj2urmbuno.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK08l-f201zqJRCLSRfp1ceZUfrSfEk68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "844352257722-52cakdvm5r3c87h6m2ipkkoj2urmbuno.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

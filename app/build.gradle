@@ -1,0 +1,114 @@
+plugins {
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+    id 'kotlin-android'
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+
+}
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.app.assurestay"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 11
+        versionName "1.0.7"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.shape_test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    if (variant.buildType.name == "debug") {
+                        def appName = "Assure"
+                        def versionCode = variant.versionCode
+                        def versionName = variant.versionName
+                        def fileName = appName + "_Test_Build_V" + versionCode + " _" + versionName + ".apk"
+                        output.outputFileName = fileName
+                    }
+                }
+            }
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    if (variant.buildType.name == "release") {
+                        def appName = "Assure"
+                        def versionCode = variant.versionCode
+                        def versionName = variant.versionName
+                        def fileName = appName + "_Release_Build_V" + versionCode + " _" + versionName + ".apk"
+                        output.outputFileName = fileName
+                    }
+                }
+            }
+        }
+    }
+
+    buildTypes.each {
+        it.buildConfigField 'String', 'My_api', app_url
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+        disable 'MissingTranslation'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.8.0-alpha02'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.5.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.google.android.gms:play-services-auth:20.3.0'
+    implementation 'com.google.firebase:firebase-messaging:23.1.0'
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.0.3'
+    implementation 'com.onesignal:OneSignal:4.8.2@aar'
+    implementation "androidx.concurrent:concurrent-futures:1.1.0"
+    implementation 'com.github.ornolfr:rating-view:0.1.2@aar'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+    implementation 'com.facebook.android:facebook-login:8.2.0'
+    implementation project(path: ':SmoothCheckBox-master')
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+    implementation platform('com.google.firebase:firebase-bom:30.3.1')
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+    //Cash free SDK
+    implementation 'com.cashfree.pg:android-sdk:1.7.26'
+    implementation 'com.android.support:multidex:1.0.3'
+}
+

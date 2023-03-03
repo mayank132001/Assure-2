@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attrs="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.effistay.activity.RoomDetail">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_rd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar"
+        android:textStyle="bold"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/app_background"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_rd"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_rd">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/con_rd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <com.app.effistay.util.EnchantedViewPager
+                android:id="@+id/viewPager_rd"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.rd.PageIndicatorView
+                android:id="@+id/pageIndicatorView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/slider_home_bg"
+                android:paddingStart="8dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="3dp"
+                app:piv_animationType="scale"
+                app:piv_dynamicCount="true"
+                app:piv_interactiveAnimation="true"
+                app:piv_selectedColor="@color/page_indicator_active_rd"
+                app:piv_unselectedColor="@color/page_indicator_inactive_rd"
+                app:piv_viewPager="@id/viewPager_rd"
+                attrs:layout_constraintBottom_toBottomOf="@+id/viewPager_rd"
+                attrs:layout_constraintEnd_toEndOf="parent"
+                attrs:layout_constraintStart_toStartOf="parent"
+                attrs:piv_padding="6dp"
+                attrs:piv_radius="4dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/viewPager_rd">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textView_roomName_rd"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/app_name"
+                        android:textColor="@color/textView_title_rd"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/con_rating_rd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView_roomName_rd">
+
+                        <com.github.ornolfr.ratingview.RatingView
+                            android:id="@+id/ratingBar_rd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            app:drawable_empty="@drawable/stare"
+                            app:drawable_filled="@drawable/select_stare"
+                            app:drawable_margin="1dp"
+                            app:drawable_size="22dp"
+                            app:is_indicator="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:max_count="5" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/textView_totalRating_rd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:gravity="center"
+                            android:text="@string/app_name"
+                            android:textColor="@color/textView_sub_rd"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/ratingBar_rd"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/ratingBar_rd"
+                            app:layout_constraintTop_toTopOf="@+id/ratingBar_rd" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutHotelBook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/con_rating_rd">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutSoldOut"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginEnd="20dp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="5dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:strokeColor="@color/button_bg"
+                                app:strokeWidth="2dp">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingStart="10dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingEnd="10dp"
+                                    android:paddingBottom="10dp"
+                                    android:text="Sold Out"
+                                    android:textColor="@color/textView_app_color"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutAvlHours"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/tvShowOnMap"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/bg_when_where_selected"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:text="Show On Map"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:id="@+id/layoutTime"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="3"
+                                app:layout_constraintTop_toBottomOf="@+id/tvShowOnMap">
+
+                                <TextView
+                                    android:id="@+id/tv3H"
+                                    android:layout_width="0dp"
+                                    android:layout_height="50dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_when_where"
+                                    android:gravity="center"
+                                    android:text="3 hours"
+                                    android:textColor="@color/txt_colorPrimary"
+                                    android:textSize="12sp" />
+
+
+                                <TextView
+                                    android:id="@+id/tv6H"
+                                    android:layout_width="0dp"
+                                    android:layout_height="50dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_when_where"
+                                    android:gravity="center"
+                                    android:text="6 hours"
+                                    android:textColor="@color/txt_colorPrimary"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv12H"
+                                    android:layout_width="0dp"
+                                    android:layout_height="50dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_when_where"
+                                    android:gravity="center"
+                                    android:text="12 hours"
+                                    android:textColor="@color/txt_colorPrimary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/lblCheckIN"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:text="Check In:"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:visibility="gone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/layoutTime" />
+
+
+                            <LinearLayout
+                                android:id="@+id/layoutCheckIN"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:weightSum="1"
+                                app:layout_constraintTop_toBottomOf="@id/lblCheckIN">
+
+                                <TextView
+                                    android:id="@+id/tvCheckINDate"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_weight="0.5"
+                                    android:background="@drawable/bg_when_where_selected"
+                                    android:gravity="center"
+                                    android:text="Check-in date"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+
+
+                                <TextView
+                                    android:id="@+id/tvCheckINTime"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_weight="0.5"
+                                    android:background="@drawable/bg_when_where_selected"
+                                    android:gravity="center"
+                                    android:text="Check-in time"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/lblCheckOut"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:text="Check Out:"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:visibility="gone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/layoutCheckIN" />
+
+                            <LinearLayout
+                                android:id="@+id/layoutCheckOut"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:weightSum="1"
+                                app:layout_constraintTop_toBottomOf="@id/lblCheckOut">
+
+                                <TextView
+                                    android:id="@+id/tvCheckOutDate"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_weight="0.5"
+                                    android:background="@drawable/bg_when_where"
+                                    android:gravity="center"
+                                    android:text="Check-out date"
+                                    android:textColor="@color/txt_colorPrimary"
+                                    android:textSize="14sp" />
+
+
+                                <TextView
+                                    android:id="@+id/tvCheckOutTime"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_weight="0.5"
+                                    android:background="@drawable/bg_when_where"
+                                    android:gravity="center"
+                                    android:text="Check-out time"
+                                    android:textColor="@color/txt_colorPrimary"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/lblBookRoom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:text="Book Rooms"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/layoutRooms"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/layoutRooms" />
+
+
+                            <LinearLayout
+                                android:id="@+id/layoutRooms"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="25dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:weightSum="3"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/layoutCheckOut">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/tvRoomMin"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_margin="10dp"
+                                    android:background="@drawable/bg_when_where"
+                                    android:gravity="center"
+                                    android:padding="15dp"
+                                    android:src="@drawable/minus"
+                                    app:tint="@color/txt_colorPrimary" />
+
+
+                                <TextView
+                                    android:id="@+id/tvBookRooms"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_margin="10dp"
+                                    android:background="@drawable/bg_when_where"
+                                    android:gravity="center"
+                                    android:text="1"
+                                    android:textColor="@color/txt_colorPrimary"
+                                    android:textSize="20sp" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/tvRoomPlus"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_margin="10dp"
+                                    android:background="@drawable/bg_when_where"
+                                    android:gravity="center"
+                                    android:padding="15dp"
+                                    android:src="@drawable/plus"
+                                    app:tint="@color/txt_colorPrimary" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/lblKyc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Guest can do the KYC formality in hotal too"
+                                android:textColor="@color/app_green"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/layoutRooms" />
+
+                            <TextView
+                                android:id="@+id/tvUploadKYC"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_when_where"
+                                android:gravity="center"
+                                android:text="Upload KYC Document"
+                                android:textColor="@color/txt_colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/lblKyc" />
+
+                            <TextView
+                                android:id="@+id/tvGuestInRoom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Two adult guest per room"
+                                android:textColor="@color/txt_colorPrimary"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tvUploadKYC" />
+
+                            <EditText
+                                android:id="@+id/etCoupon"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_when_where"
+                                android:gravity="start|center_vertical"
+                                android:hint="Enter Coupon Code"
+                                android:paddingStart="10dp"
+                                android:text=""
+                                android:textColor="@color/colorPrimary"
+                                android:textColorHint="@color/textView_box_color"
+                                android:textSize="12sp"
+                                app:layout_constraintEnd_toStartOf="@id/btnCouponApply"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvGuestInRoom" />
+
+                            <TextView
+                                android:id="@+id/btnCouponApply"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/bg_when_where_selected"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:text="Apply"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvGuestInRoom" />
+
+                            <TextView
+                                android:id="@+id/tvCouponDetails"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/etCoupon" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <!-- <ImageView
+                             android:id="@+id/imageView_rating_rd"
+                             android:layout_width="22dp"
+                             android:layout_height="20dp"
+                             android:layout_gravity="center"
+                             android:layout_marginStart="10dp"
+                             android:layout_marginEnd="10dp"
+                             android:contentDescription="@string/app_name"
+                             android:src="@drawable/ic_edit"
+                             app:layout_constraintBottom_toBottomOf="@+id/con_rating_rd"
+                             app:layout_constraintEnd_toEndOf="parent"
+                             app:layout_constraintHorizontal_bias="0.0"
+                             app:layout_constraintStart_toEndOf="@+id/con_rating_rd"
+                             app:layout_constraintTop_toTopOf="@+id/con_rating_rd"
+                             app:tint="@color/colorPrimary" />
+     -->
+                        <!--<com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardView_rd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:visibility="gone"
+                            android:layout_marginTop="15dp"
+                            app:cardBackgroundColor="@color/button_bg"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layoutAvlHours">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:paddingTop="5dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="5dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@string/app_name"
+                                    android:src="@drawable/ic_price"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:tint="@color/colorPrimary" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/textView_price_rd"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:text="@string/app_name"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                                    app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>-->
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardView_bookNow_rd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="15dp"
+                            android:visibility="visible"
+                            app:cardCornerRadius="5dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layoutAvlHours"
+                            app:strokeColor="@color/txt_colorPrimary"
+                            app:strokeWidth="2dp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:paddingTop="5dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="5dp"
+                                android:text="@string/pay_now"
+                                android:textColor="@color/txt_colorPrimary"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardView_selected_hours"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:visibility="gone"
+                            app:cardCornerRadius="5dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/cardView_bookNow_rd"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/cardView_pay_at_hotel"
+                            app:layout_constraintTop_toTopOf="@+id/cardView_bookNow_rd">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/lblSelectedHours"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_when_where_selected"
+                                android:paddingStart="10dp"
+                                android:paddingTop="5dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="5dp"
+                                android:text="300"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardView_pay_at_hotel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:visibility="visible"
+                            app:cardCornerRadius="5dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/cardView_bookNow_rd"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/cardView_bookNow_rd"
+                            app:layout_constraintTop_toTopOf="@+id/cardView_bookNow_rd"
+                            app:strokeColor="@color/txt_colorPrimary"
+                            app:strokeWidth="2dp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:paddingTop="5dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="5dp"
+                                android:text="@string/payathotel"
+                                android:textColor="@color/txt_colorPrimary"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardView_pay_advance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:visibility="visible"
+                            app:cardCornerRadius="5dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/cardView_pay_at_hotel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/cardView_pay_at_hotel"
+                            app:layout_constraintTop_toTopOf="@+id/cardView_pay_at_hotel"
+                            app:strokeColor="@color/txt_colorPrimary"
+                            app:strokeWidth="2dp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_pay_advance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="10dp"
+                            android:paddingBottom="5dp"
+                            android:text="@string/pay_advance"
+                            android:textColor="@color/txt_colorPrimary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <WebView
+                        android:id="@+id/webView_des_rd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/lorem"
+                        android:textColor="@color/textView_sub_rd"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutHotelBook" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView3">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textView_title_roomAmenities_detail_adapter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/room_amenities"
+                        android:textColor="@color/textView_title_rd"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView_roomAmenities_rd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:paddingBottom="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView_title_roomAmenities_detail_adapter"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/tvReadMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:padding="2dp"
+                        android:text="Read More"
+                        android:textColor="@color/txt_colorPrimary"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/recyclerView_roomAmenities_rd"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textView_rules_rd"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:text="@string/room_rules"
+                        android:textColor="@color/textView_title_rd"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <WebView
+                        android:id="@+id/webView_rules_rd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="15dp"
+                        app:layout_constraintBottom_toTopOf="@id/tvReadMoreRules"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView_rules_rd" />
+
+                    <TextView
+                        android:id="@+id/tvReadMoreRules"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:padding="2dp"
+                        android:text="Read More"
+                        android:textColor="@color/txt_colorPrimary"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar_rd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:theme="@style/ProgressBar"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        layout="@layout/no_data_found"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout_rd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

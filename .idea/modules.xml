@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assure_2.iml" filepath="$PROJECT_DIR$/.idea/modules/Assure_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/Assure_2.SmoothCheckBox-master.iml" filepath="$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/Assure_2.SmoothCheckBox-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/Assure_2.SmoothCheckBox-master.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/Assure_2.SmoothCheckBox-master.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/Assure_2.SmoothCheckBox-master.main.iml" filepath="$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/Assure_2.SmoothCheckBox-master.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/Assure_2.SmoothCheckBox-master.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/Assure_2.SmoothCheckBox-master.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Assure_2.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Assure_2.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Assure_2.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Assure_2.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Assure_2.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Assure_2.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Assure_2.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Assure_2.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>
